@@ -1,21 +1,23 @@
-# AES-Crypt API
+# AES Crypt API Documentation
 
-This API allows you to encrypt and decrypt messages with AES encryption.
+This documentation describes the AES Crypt API and how to interact with it using HTTP requests. The API provides two main endpoints, one for encrypting a message and another for decrypting it.
 
 ## Endpoints
 
-There are two main endpoints:
-
-1. `/api/encrypt`: This endpoint accepts a `GET` or `POST` request with the parameters `message` (the message you want to encrypt) and `key` (a 32 bytes, hex encoded key). The endpoint returns an encrypted version of your message.
-
-2. `/api/decrypt`: This endpoint accepts a `POST` request with the parameters `message` (the encrypted message you want to decrypt) and `key` (the key that was used for encryption). The endpoint returns a decrypted version of your message.
-
-## Usage
-
 ### Encryption
 
-To encrypt a message, send a `GET` or `POST` request to the `/api/encrypt` endpoint with your message and key as parameters.
+To encrypt a message, send a GET request to the `/api/encrypt` endpoint. You need to provide two query parameters:
+
+- `message`: The plaintext message you want to encrypt.
+- `key`: The 64-character, hex-encoded encryption key.
+
+An example Python script for encryption can be found here: [Encryption Example](encrypt_example.py)
 
 ### Decryption
 
-To decrypt a message, send a `POST` request to the `/api/decrypt` endpoint with your encrypted message and key as parameters.
+To decrypt a message, send a POST request to the `/api/decrypt` endpoint. You need to provide two query parameters:
+
+- `message`: The encrypted message you want to decrypt.
+- `key`: The 64-character, hex-encoded encryption key.
+
+An example Python script for decryption can be found here: [Decryption Example](decryption.py)
