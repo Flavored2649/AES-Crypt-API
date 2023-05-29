@@ -1,37 +1,21 @@
-# AES Crypt API Documentation
+# AES-Crypt API
 
-This API provides powerful and efficient AES encryption and decryption functionality. It is implemented using Python and Flask.
+This API allows you to encrypt and decrypt messages with AES encryption.
 
-## API Endpoints
+## Endpoints
 
-There are two main API endpoints:
+There are two main endpoints:
 
-1. `/api/encrypt`: For encrypting a message.
-2. `/api/decrypt`: For decrypting a message.
+1. `/api/encrypt`: This endpoint accepts a `GET` or `POST` request with the parameters `message` (the message you want to encrypt) and `key` (a 32 bytes, hex encoded key). The endpoint returns an encrypted version of your message.
 
-## Encryption
+2. `/api/decrypt`: This endpoint accepts a `POST` request with the parameters `message` (the encrypted message you want to decrypt) and `key` (the key that was used for encryption). The endpoint returns a decrypted version of your message.
 
-To encrypt a message, make a GET request to the `/api/encrypt` endpoint, and provide the plaintext message and the key as query parameters.
+## Usage
 
-Example request using curl:
+### Encryption
 
-```bash
-curl "https://aes-crypt.com/api/encrypt?message=Hello%20World&key=4fbd8e11e545fdfc7e16d417bb464a9208674a6a6e830b0ed8f8f5855fb8e805"
+To encrypt a message, send a `GET` or `POST` request to the `/api/encrypt` endpoint with your message and key as parameters.
 
-## Decryption
+### Decryption
 
-To decrypt a message, make a POST request to the `/api/decrypt` endpoint, and provide the encrypted message and the key as JSON payload.
-
-Example request using curl:
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{"message":"ETGL1sW1fFk8zoxnf03WMw== xv/Z G18vhB/1B4WPePjh1bSvRQ==", "key":"4fbd8e11e545fdfc7e16d417bb464a9208674a6a6e830b0ed8f8f5855fb8e805"}' https://aes-crypt.com/api/decrypt
-
-## Decryption
-
-To decrypt a message, make a POST request to the `/api/decrypt` endpoint, and provide the encrypted message and the key as JSON payload.
-
-Example request using curl:
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{"message":"ETGL1sW1fFk8zoxnf03WMw== xv/Z G18vhB/1B4WPePjh1bSvRQ==", "key":"4fbd8e11e545fdfc7e16d417bb464a9208674a6a6e830b0ed8f8f5855fb8e805"}' https://aes-crypt.com/api/decrypt
+To decrypt a message, send a `POST` request to the `/api/decrypt` endpoint with your encrypted message and key as parameters.
