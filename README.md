@@ -26,3 +26,12 @@ Example request using curl:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"message":"ETGL1sW1fFk8zoxnf03WMw== xv/Z G18vhB/1B4WPePjh1bSvRQ==", "key":"4fbd8e11e545fdfc7e16d417bb464a9208674a6a6e830b0ed8f8f5855fb8e805"}' https://aes-crypt.com/api/decrypt
+
+## Decryption
+
+To decrypt a message, make a POST request to the `/api/decrypt` endpoint, and provide the encrypted message and the key as JSON payload.
+
+Example request using curl:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"message":"ETGL1sW1fFk8zoxnf03WMw== xv/Z G18vhB/1B4WPePjh1bSvRQ==", "key":"4fbd8e11e545fdfc7e16d417bb464a9208674a6a6e830b0ed8f8f5855fb8e805"}' https://aes-crypt.com/api/decrypt
