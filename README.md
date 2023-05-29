@@ -11,7 +11,7 @@ To encrypt a message, send a GET request to the `/api/encrypt` endpoint. You nee
 - `message`: The plaintext message you want to encrypt.
 - `key`: The 64-character, hex-encoded encryption key.
 
-An example Python script for encryption can be found here: [Encryption Example](encrypt_example.py)
+An example Python script for encryption can be found here: [Encryption Example](encrypt.py)
 
 ### Decryption
 
